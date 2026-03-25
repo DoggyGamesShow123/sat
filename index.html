@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Saturn Web v1.01</title></head>
+<body style="background:#000;color:#fff;text-align:center;">
+<h2>Sega Saturn Web Emulator v1.01</h2>
+<div id="drop">Drag & Drop Game File</div>
+<canvas id="screen" width="640" height="480"></canvas>
+<script>
+// Auto-load BIOS
+const BIOS_NAME='saturn_bios.bin';
+async function loadBIOS() {
+ const resp=await fetch(BIOS_NAME).catch(()=>null);
+ if(!resp||!resp.ok){console.error('BIOS missing');return null;}
+ return new Uint8Array(await resp.arrayBuffer());
+}
+// Placeholder emulator init
+console.log('Insert yabause_libretro.wasm and yabause_libretro.js in this folder');
+</script>
+<script src="yabause_libretro.js"></script>
+</body></html>

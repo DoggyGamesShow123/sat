@@ -1,0 +1,1 @@
+Place saturn_bios.bin, yabause_libretro.wasm, yabause_libretro.js next to index.html
